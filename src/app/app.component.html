@@ -1,16 +1,20 @@
 <!-- OUTLETS DEMO using CxOutletRef -->
 
 
-<!-- <ng-template cxOutletRef="SiteLogo">
+<!-- Exercise 1 Replace Site logo -->
+<ng-template cxOutletRef="SiteLogo">
 <img src="images/ms.jpeg" width="200" height="40">
-</ng-template> -->
+</ng-template>
 
-<!-- app.component.html -->
-<!-- <ng-template cxOutletRef="PDP.PRICE" [cxOutletPos]="OutletPosition.REPLACE" let-data>
+<!-- Exercise 2 Replace price in PDP for a product with added text-->
+<ng-template cxOutletRef="PDP.PRICE" [cxOutletPos]="OutletPosition.REPLACE" let-data>
   <div class="my-fancy-price">
     <span>{{ data.product?.price?.formattedValue }}</span>
     <span class="sale"> Limited offer!</span>
   </div>
-</ng-template> -->
+</ng-template>
+
+<!-- Exercise 3 -->
+ <app-exercise-outlet></app-exercise-outlet>
 
 <cx-storefront></cx-storefront>

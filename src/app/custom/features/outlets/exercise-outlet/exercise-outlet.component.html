@@ -1,0 +1,17 @@
+<!-- Exercise 3 -->
+
+<ng-template cxOutletRef="Section1" [cxOutletPos]="before">
+    <a [routerLink]="{ cxRoute: 'product', params:{ code: 1934793, name: 'powershot' }} | cxUrl">
+        PowerShot Red Camera</a>
+    <a [routerLink]="{ cxRoute: 'category', params:{ code: 578 }} | cxUrl">
+        SLR Cameras</a>
+</ng-template>
+
+<ng-template [cxOutletRef]="pdpOutlets.SUMMARY">
+    @if(availableForPickup$ |async){
+    <div>Available for Pickup</div>
+    }
+    @else {
+    <div>Not Available for pickup</div>
+    }
+</ng-template>
