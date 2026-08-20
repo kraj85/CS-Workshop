@@ -1,7 +1,7 @@
 import { AsyncPipe } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component, Inject, inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { isNotNullable, Product, UrlModule } from '@spartacus/core';
+import { Config, isNotNullable, Product, UrlModule } from '@spartacus/core';
 import { CurrentProductService, OutletPosition, OutletRefModule, ProductDetailOutlets } from '@spartacus/storefront';
 import { filter, map, Observable } from 'rxjs';
 
@@ -12,6 +12,10 @@ import { filter, map, Observable } from 'rxjs';
   styleUrl: './exercise-outlet.component.scss',
 })
 export class ExerciseOutlet {
+
+  globalConfig = inject(Config);
+_ = console.log(inject(Config));
+
   //Exercise 3
   before: OutletPosition = OutletPosition.REPLACE;
 
