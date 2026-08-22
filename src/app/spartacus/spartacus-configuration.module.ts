@@ -14,27 +14,30 @@ import {
   layoutConfigFactory,
   mediaConfig,
 } from '@spartacus/storefront';
+import { defaultLayoutConfig } from '../config/custom-config/default-layout-config';
 
 @NgModule({
   declarations: [],
   imports: [],
   providers: [
     provideConfigFactory(layoutConfigFactory),
+    provideConfig(defaultLayoutConfig), //Exercise 1
     provideConfig(mediaConfig),
     ...defaultCmsContentProviders,
     provideConfig(<OccConfig>{
       backend: {
         occ: {
-          baseUrl: 'https://localhost:9002',
+          // baseUrl: 'https://localhost:9002',
+          baseUrl: 'https://composable-storefront-demo.eastus.cloudapp.azure.com:8443',
         },
       },
     }),
     provideConfig(<SiteContextConfig>{
       context: {
         urlParameters: ['baseSite', 'language', 'currency'],
-        baseSite: ['electronics-spa','apparel-uk-spa'],
+        baseSite: ['electronics-spa', 'apparel-uk-spa'],
         language: ['en'],
-        currency: ['USD','GBP'],
+        currency: ['USD', 'GBP'],
       },
     }),
     provideConfig(<I18nConfig>{
@@ -47,6 +50,14 @@ import {
     provideConfig(<FeaturesConfig>{
       features: {
         level: '221121.11',
+      },
+    }),
+
+    provideConfig({
+      cart: {
+        selectiveCart: {
+          enabled: true,
+        },
       },
     }),
   ],
