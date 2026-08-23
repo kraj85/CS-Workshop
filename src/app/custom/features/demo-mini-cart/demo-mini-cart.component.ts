@@ -17,12 +17,9 @@ import { MiniCartComponent } from '@spartacus/cart/base/components/mini-cart';
 export class DemoMiniCart extends MiniCartComponent{
   activeCartFacade = inject(ActiveCartFacade);
 
-  entriesCount$ = this.getEntries();
+  entriesCount$ = this.activeCartFacade.getActive().pipe(
+    map(cart => cart.entries?.length ?? 0)
+  );
 
-  getEntries(): Observable<number> {
-    return this.activeCartFacade.getEntries().pipe(
-      startWith([]),
-      map((entries) => entries.length || 0),
-    );
-  }
+
 }
