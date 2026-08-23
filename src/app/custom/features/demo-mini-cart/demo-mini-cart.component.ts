@@ -18,6 +18,8 @@ export class DemoMiniCart extends MiniCartComponent{
 
   entriesCount$ = this.activeCartFacade.getActive().pipe(
     filter(cart => !!cart.code),
-    map(cart => cart.entries?.length ?? 0)
+    map(cart => {
+     return cart.entries?.length ?? 0
+    })
   );
 }
