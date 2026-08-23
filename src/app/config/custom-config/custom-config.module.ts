@@ -5,6 +5,7 @@ import { CustomOAuthLibWrapperService } from '../../custom/services/custom-oauth
 import { CustomLoginFormModule } from '../../custom/features/accounts/components/login-form/custom-login-form.module';
 import { SmartEditConfig } from '@spartacus/smartedit/root';
 import { CustomBannerComponent } from '../../custom/features/banner/custom-banner/custom-banner.component';
+import { DemoMiniCart } from '../../custom/features/demo-mini-cart/demo-mini-cart.component';
 
 @NgModule({
   declarations: [],
@@ -45,6 +46,13 @@ import { CustomBannerComponent } from '../../custom/features/banner/custom-banne
         },
       },
     }),
+    provideConfig(<CmsConfig>{
+      cmsComponents:{
+        MiniCartComponent:{
+          component:DemoMiniCart
+        }
+      }
+    })
   ],
 })
 export class CustomConfigModule {}
