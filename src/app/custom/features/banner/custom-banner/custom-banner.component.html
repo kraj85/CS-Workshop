@@ -1,0 +1,13 @@
+<!-- custom-banner works!  Exercise 1--> 
+
+<!-- Exerxcise 2 Print data using JSON PIPE -->
+<!-- @if (data$ | async; as data) {
+  <ng-container>{{ data | json }}</ng-container>
+} -->
+
+<!-- Exercise 3 Print only UID -->
+ @if(data$|async; as data){
+  <ng-container>
+    {{data?.uid}}
+  </ng-container>
+ }

@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CmsConfig, CustomLoginGuard, NotAuthGuard, OAuthLibWrapperService, provideConfig } from '@spartacus/core';
+import { AuthGuard, CmsConfig, CustomLoginGuard, NotAuthGuard, OAuthLibWrapperService, provideConfig } from '@spartacus/core';
 import { CustomOAuthLibWrapperService } from '../../custom/services/custom-oauth-lib-wrapper.service';
 import { CustomLoginFormModule } from '../../custom/features/accounts/components/login-form/custom-login-form.module';
 import { SmartEditConfig } from '@spartacus/smartedit/root';
+import { CustomBannerComponent } from '../../custom/features/banner/custom-banner/custom-banner.component';
 
 @NgModule({
   declarations: [],
@@ -35,7 +36,15 @@ import { SmartEditConfig } from '@spartacus/smartedit/root';
      allowOrigin: 'localhost:9002, electronics-spa.internal:9002',
 
     },
-  })
+  }),
+    provideConfig(<CmsConfig>{
+      cmsComponents: {
+        SimpleResponsiveBannerComponent: {
+          component: CustomBannerComponent,
+          // guards: [AuthGuard],
+        },
+      },
+    }),
   ],
 })
 export class CustomConfigModule {}
