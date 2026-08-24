@@ -70,6 +70,7 @@ import { ProductVariantsFeatureModule } from './features/product/product-variant
 import { ProductImageZoomFeatureModule } from './features/product/product-image-zoom-feature.module';
 import { RouterModule } from '@angular/router';
 import { staticRoutes } from '../custom/features/static-page/static-routes';
+import { provideCustomRouting } from './features/custom-routing/custom-routing.providers';
 
 @NgModule({
   declarations: [],
@@ -141,6 +142,7 @@ import { staticRoutes } from '../custom/features/static-page/static-routes';
     RouterModule.forChild(staticRoutes),
   ],
   providers: [
+    provideCustomRouting(),
     provideFeatureToggles({
       a11yKeyboardAccessibleZoom: true,
       a11yPreventCartItemsFormRedundantRecreation: true,
