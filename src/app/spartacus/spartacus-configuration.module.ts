@@ -27,8 +27,8 @@ import { defaultLayoutConfig } from '../config/custom-config/default-layout-conf
     provideConfig(<OccConfig>{
       backend: {
         occ: {
-          // baseUrl: 'https://localhost:9002',
-          baseUrl: 'https://composable-storefront-demo.eastus.cloudapp.azure.com:8443',
+          baseUrl: 'https://localhost:9002',
+          // baseUrl: 'https://composable-storefront-demo.eastus.cloudapp.azure.com:8443',
         },
       },
     }),
@@ -36,7 +36,7 @@ import { defaultLayoutConfig } from '../config/custom-config/default-layout-conf
       context: {
         urlParameters: ['baseSite', 'language', 'currency'],
         baseSite: ['electronics-spa', 'apparel-uk-spa'],
-        language: ['en'],
+        language: ['en','ja'],
         currency: ['USD', 'GBP'],
       },
     }),

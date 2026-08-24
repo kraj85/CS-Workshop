@@ -1,4 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+// Exercise 2 -Override SCSS variable (compile-time)
+// $primary: #e63012;
+
 @import 'styles-config';
 
 // ORDER IMPORTANT: Spartacus core first
@@ -23,3 +26,18 @@
 
 // ORDER IMPORTANT: Spartacus styles last
 @import '@spartacus/styles/index';
+
+//Exercise 1 - change Primary color value -Override CSS custom property (simplest, runtime)
+/* styles.scss */
+// :root {
+//   --cx-color-primary: #e63012;
+// }
+
+
+//Exercise 4 — Direct selector override (most control)
+cx-mini-cart {
+  a {
+    min-width: 110px;
+     border-radius: 8px;
+  }
+}

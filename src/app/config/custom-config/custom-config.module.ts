@@ -46,13 +46,14 @@ import { DemoMiniCart } from '../../custom/features/demo-mini-cart/demo-mini-car
         },
       },
     }),
-    provideConfig(<CmsConfig>{
-      cmsComponents:{
-        MiniCartComponent:{
-          component:DemoMiniCart
-        }
-      }
-    })
+    //Comment this for all exercises to utilize OOTB mini cart styles
+    // provideConfig(<CmsConfig>{
+    //   cmsComponents:{
+    //     MiniCartComponent:{
+    //       component:DemoMiniCart
+    //     }
+    //   }
+    // })
   ],
 })
 export class CustomConfigModule {}
