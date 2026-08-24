@@ -15,6 +15,9 @@ import {
   mediaConfig,
 } from '@spartacus/storefront';
 import { defaultLayoutConfig } from '../config/custom-config/default-layout-config';
+import {
+  defaultCustomTranslationResource,
+} from '../../../public/translation/translation-overwrites';
 
 @NgModule({
   declarations: [],
@@ -36,7 +39,7 @@ import { defaultLayoutConfig } from '../config/custom-config/default-layout-conf
       context: {
         urlParameters: ['baseSite', 'language', 'currency'],
         baseSite: ['electronics-spa', 'apparel-uk-spa'],
-        language: ['en','ja'],
+        language: ['en', 'ja'],
         currency: ['USD', 'GBP'],
       },
     }),
@@ -45,6 +48,11 @@ import { defaultLayoutConfig } from '../config/custom-config/default-layout-conf
         resources: { en: translationsEn },
         chunks: translationChunksConfig,
         fallbackLang: 'en',
+      },
+    }),
+    provideConfig(<I18nConfig>{
+      i18n: {
+        resources: defaultCustomTranslationResource
       },
     }),
     provideConfig(<FeaturesConfig>{
