@@ -7,6 +7,8 @@ import { SmartEditConfig } from '@spartacus/smartedit/root';
 import { CustomBannerComponent } from '../../custom/features/banner/custom-banner/custom-banner.component';
 import { DemoMiniCart } from '../../custom/features/demo-mini-cart/demo-mini-cart.component';
 import { LoginPageMetaResolver } from '../../custom/seo/login-page-meta.resolver';
+import { CustomSearchBoxComponentService } from '../../custom/services/custom-search-box-component.service';
+import { SearchBoxComponentService } from '@spartacus/storefront';
 
 @NgModule({
   declarations: [],
@@ -59,6 +61,10 @@ import { LoginPageMetaResolver } from '../../custom/seo/login-page-meta.resolver
       provide: PageMetaResolver,
       useClass: LoginPageMetaResolver,
       multi: true,
+    },
+    {
+      provide: SearchBoxComponentService,
+      useClass: CustomSearchBoxComponentService,
     },
   ],
 })
