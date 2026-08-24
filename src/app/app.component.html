@@ -3,7 +3,9 @@
 
 <!-- Exercise 1 Replace Site logo -->
 <ng-template cxOutletRef="SiteLogo">
-<img src="images/ms.jpeg" width="200" height="40">
+  <a [routerLink]="{  cxRoute:'Home'} | cxUrl">
+  <img src="images/ms.jpeg" width="200" height="40">
+  </a>
 </ng-template>
 
 <!-- Exercise 2 Replace price in PDP for a product with added text-->
@@ -15,6 +17,6 @@
 </ng-template>
 
 <!-- Exercise 3 -->
- <app-exercise-outlet></app-exercise-outlet>
+<app-exercise-outlet></app-exercise-outlet>
 
 <cx-storefront></cx-storefront>
