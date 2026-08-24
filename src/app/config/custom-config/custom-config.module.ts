@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AuthGuard, CmsConfig, CustomLoginGuard, NotAuthGuard, OAuthLibWrapperService, provideConfig } from '@spartacus/core';
+import { AuthGuard, CmsConfig, CustomLoginGuard, NotAuthGuard, OAuthLibWrapperService, PageMetaResolver, provideConfig } from '@spartacus/core';
 import { CustomOAuthLibWrapperService } from '../../custom/services/custom-oauth-lib-wrapper.service';
 import { CustomLoginFormModule } from '../../custom/features/accounts/components/login-form/custom-login-form.module';
 import { SmartEditConfig } from '@spartacus/smartedit/root';
 import { CustomBannerComponent } from '../../custom/features/banner/custom-banner/custom-banner.component';
 import { DemoMiniCart } from '../../custom/features/demo-mini-cart/demo-mini-cart.component';
+import { LoginPageMetaResolver } from '../../custom/seo/login-page-meta.resolver';
 
 @NgModule({
   declarations: [],
@@ -53,7 +54,12 @@ import { DemoMiniCart } from '../../custom/features/demo-mini-cart/demo-mini-car
     //       component:DemoMiniCart
     //     }
     //   }
-    // })
+    // }),
+    {
+      provide: PageMetaResolver,
+      useClass: LoginPageMetaResolver,
+      multi: true,
+    },
   ],
 })
 export class CustomConfigModule {}
