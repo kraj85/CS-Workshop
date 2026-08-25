@@ -6,7 +6,9 @@
 
 export const common = {
   "searchBox": {
-    "placeholder": "商品名または SKU を入力",
-    "productSearch": "商品検索",
+    placeholder: "商品名または SKU を入力",
+    productSearch: "商品検索",
+    powerSHot:"パワーショット・カメラ",
+    slr:'一眼レフカメラ'
   }
 }

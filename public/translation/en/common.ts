@@ -8,5 +8,7 @@ export const common = {
   searchBox: {
     placeholder: 'Enter product name ',
     productSearch: 'Find a product',
+    powerSHot:'Power Shot Camera',
+    slr:'SLR Cameras'
   }
 }

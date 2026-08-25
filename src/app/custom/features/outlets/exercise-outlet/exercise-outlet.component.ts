@@ -1,13 +1,13 @@
 import { AsyncPipe } from '@angular/common';
 import { Component, Inject, inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { Config, isNotNullable, Product, UrlModule } from '@spartacus/core';
+import { Config, isNotNullable, Product, TranslatePipe, UrlModule } from '@spartacus/core';
 import { CurrentProductService, OutletPosition, OutletRefModule, ProductDetailOutlets } from '@spartacus/storefront';
 import { filter, map, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-exercise-outlet',
-  imports: [RouterModule, UrlModule, OutletRefModule,AsyncPipe],
+  imports: [RouterModule, UrlModule, OutletRefModule,AsyncPipe,TranslatePipe],
   templateUrl: './exercise-outlet.component.html',
   styleUrl: './exercise-outlet.component.scss',
 })
