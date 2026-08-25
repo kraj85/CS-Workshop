@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AuthGuard, CmsConfig, CustomLoginGuard, NotAuthGuard, OAuthLibWrapperService, PageMetaResolver, provideConfig } from '@spartacus/core';
-import { CustomOAuthLibWrapperService } from '../../custom/services/custom-oauth-lib-wrapper.service';
+// import { CustomOAuthLibWrapperService } from '../../custom/services/custom-oauth-lib-wrapper.service';
 import { CustomLoginFormModule } from '../../custom/features/accounts/components/login-form/custom-login-form.module';
 import { SmartEditConfig } from '@spartacus/smartedit/root';
 import { CustomBannerComponent } from '../../custom/features/banner/custom-banner/custom-banner.component';
